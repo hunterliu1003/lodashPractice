@@ -1,5 +1,6 @@
 const _flow = require('lodash/flow');
 const _add = require('lodash/add');
+// const { flow: _flow, add: _add } = require('lodash');
 
 let square = function(n){
   return n * n;

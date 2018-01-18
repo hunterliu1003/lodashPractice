@@ -1,5 +1,4 @@
-const _some = require('lodash/some');
-const _values = require('lodash/values');
+const { some, values } = require('lodash');
 
 let obj = {
   number: 5,
@@ -7,7 +6,7 @@ let obj = {
   string: 'lodash'
 }
 let testObj = function(searchTerm) {
-  return _some(_values(obj), s => s === searchTerm);
+  return some(values(obj), s => s === searchTerm);
 }
 console.log(
 `testObj(5): ${ testObj(5) }
@@ -23,7 +22,7 @@ let obj2 = {
   string: 'lodash'
 }
 let testObj2 = function(searchTerm) {
-  return _some(_values(obj2), s => s === searchTerm);
+  return some(values(obj2), s => s === searchTerm);
 }
 console.log(
 `testObj2(5): ${ testObj2(5) }

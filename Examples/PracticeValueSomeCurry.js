@@ -1,6 +1,4 @@
-const _some = require('lodash/some');
-const _values = require('lodash/values');
-const _curry = require('lodash/curry');
+const { some, values, curry } = require('lodash');
 
 let obj = {
   number: 5,
@@ -14,7 +12,7 @@ let obj2 = {
 };
 
 let testObject = function(object, searchTerm) {
-  return _some(_values(obj), s => s === searchTerm);
+  return some(values(obj), s => s === searchTerm);
 };
 console.log(
 `testObject(5): ${ testObject(5) }
@@ -26,16 +24,18 @@ testObject(lodash): ${ testObject('lodash') }
 
 let curriedTestObject = function(object) {
   return function(searchTerm) {
-    return _some(_values(obj), s => s === searchTerm);
+    return some(values(obj), s => s === searchTerm);
   };
 };
 
-// let curriedTestObject = _curry(function(object, searchTerm) {
-//   return _some(_values(obj), s => s === searchTerm);
+// let curriedTestObject = curry(function(object, searchTerm) {
+//   return some(values(obj), s => s === searchTerm);
 // });
 
-// console.log(curriedTestObject(obj)(5));
-// console.log(curriedTestObject(obj, 5));
+// console.log(
+// `curriedTestObject(obj)(5)): ${ curriedTestObject(obj)(5) }
+// curriedTestObject(obj, 5): ${ curriedTestObject(obj, 5) }
+// `);
 
 let testObj = curriedTestObject(obj);
 console.log(

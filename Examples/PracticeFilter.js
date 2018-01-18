@@ -1,5 +1,4 @@
-const _iteratee = require('lodash/iteratee');
-const _filter = require('lodash/filter');
+const { iteratee, filter } = require('lodash');
 const fpFilter = require('lodash/fp/filter');
 
 let john = { name: 'john', age: 54, gender: 'male' };
@@ -16,9 +15,9 @@ let is18Female = {
   gender: 'female'
 }
 
-let filter18femaleIteratee = people.filter(_iteratee(is18Female));
-let _filter18female = _filter(people, _iteratee(is18Female));
-// let _filter18female = _filter(people, is18Female);
+let filter18femaleIteratee = people.filter(iteratee(is18Female));
+let _filter18female = filter(people, iteratee(is18Female));
+// let _filter18female = filter(people, is18Female);
 let fpFilter18female = fpFilter(is18Female);
 
 console.log(

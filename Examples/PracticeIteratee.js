@@ -1,12 +1,12 @@
-const _iteratee = require('lodash/iteratee');
+const { iteratee } = require('lodash');
 
 let john = { name: 'john', age: 54, gender: 'male' };
 let jane = { name: 'jane', age: 36, gender: 'female' };
 let mary = { name: 'mary', age: 18, gender: 'female' };
 
-let getAge = _iteratee('age');
-let is18 = _iteratee({age: 18});
-let is18Female = _iteratee({gender: 'female', age: 18})
+let getAge = iteratee('age');
+let is18 = iteratee({age: 18});
+let is18Female = iteratee({gender: 'female', age: 18})
 
 console.log(
 `getAge:
