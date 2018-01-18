@@ -1,37 +1,44 @@
-const _values = require('lodash/values');
 const _some = require('lodash/some');
-const _curry = require('lodash/curry');
+const _values = require('lodash/values');
 
 let obj = {
   number: 5,
   bool: false,
   string: 'lodash'
 }
-
-let testObj = function(object, searchTerm) {
-  return _some(_values(object), s => {
-    return s === searchTerm;
-  });
+let obj2 = {
+  number: 5,
+  bool: false,
+  string: 'lodash'
 }
 
-console.log('testObj(5): ' + testObj(obj, 5));
-console.log('testObj(\'5\'): ' + testObj(obj, '5'));
-console.log('testObj(true): ' + testObj(obj, true));
-console.log('testObj(lodash): ' + testObj(obj, 'lodash'));
+let testObject = function(object, searchTerm) {
+  return _some(_values(obj), s => s === searchTerm);
+}
+console.log(
+`testObject(5): ${ testObject(5) }
+testObject('5'): ${ testObject('5') }
+testObject(true): ${ testObject(true) }
+testObject(lodash): ${ testObject('lodash') }
+`);
 
-let curryTestObj = function(object) {
+
+let curryTestObject = function(object) {
   return function(searchTerm) {
-    return _some(_values(object), s => {
-      return s === searchTerm;
-    });
+    return _some(_values(obj), s => s === searchTerm);
   }
 }
-
-let _curryTestObj = curryTestObj(obj);
-
-// let _curryTestObj = _curry(testObj)(obj);
-
-console.log('\ncurryTestObj(5): ' + _curryTestObj(5));
-console.log('curryTestObj(\'5\'): ' + _curryTestObj('5'));
-console.log('curryTestObj(true): ' + _curryTestObj(true));
-console.log('curryTestObj(lodash): ' + _curryTestObj('lodash'));
+let testObj = curryTestObject(obj);
+console.log(
+`testObj(5): ${ testObj(5) }
+testObj('5'): ${ testObj('5') }
+testObj(true): ${ testObj(true) }
+testObj(lodash): ${ testObj('lodash') }
+`);
+let testObj2 = curryTestObject(obj2);
+console.log(
+`testObj2(5): ${ testObj2(5) }
+testObj2('5'): ${ testObj2('5') }
+testObj2(true): ${ testObj2(true) }
+testObj2(lodash): ${ testObj2('lodash') }
+`);
