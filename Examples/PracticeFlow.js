@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-function square(n){
+let square = function(n){
   return n * n;
 }
 

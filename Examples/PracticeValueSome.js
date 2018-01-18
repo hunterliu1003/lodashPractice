@@ -1,5 +1,5 @@
-const _values = require('lodash/values');
 const _some = require('lodash/some');
+const _values = require('lodash/values');
 
 let obj = {
   number: 5,

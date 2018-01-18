@@ -10,10 +10,16 @@ let people = [john, jane, mary];
 let filter18female = people.filter(person => {
   return person.gender == 'female' && person.age == 18;
 });
-let filter18femaleIteratee = people.filter(_iteratee({age: 18, gender: 'female'}));
-let _filter18female = _filter(people, _iteratee({age: 18, gender: 'female'}));
-// let _filter18female = _filter(people, {age: 18, gender: 'female'});
-let fpFilter18female = fpFilter({age: 18, gender: 'female'});
+
+let is18Female = {
+  age: 18,
+  gender: 'female'
+}
+
+let filter18femaleIteratee = people.filter(_iteratee(is18Female));
+let _filter18female = _filter(people, _iteratee(is18Female));
+// let _filter18female = _filter(people, is18Female);
+let fpFilter18female = fpFilter(is18Female);
 
 console.log(
 `filter18female:
@@ -26,3 +32,10 @@ ${ JSON.stringify(_filter18female) }
 fpFilter18female(auto-currying):
 ${ JSON.stringify(fpFilter18female(people)) }
 `);
+
+
+// let isMale = {
+//   gender: 'male'
+// }
+// console.log(fpFilter(isMale, people));
+// console.log(fpFilter(isMale)(people));

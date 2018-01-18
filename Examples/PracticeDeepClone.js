@@ -15,7 +15,7 @@ const testTimeCosts = function(functionName) {
   }
 }
 
-const obj = function() {
+let obj = function() {
   let obj = {};
   for (let i = 0; i < 1500; i++) {
     obj[i] = {};
