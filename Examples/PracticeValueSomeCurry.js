@@ -12,19 +12,19 @@ let obj2 = {
 };
 
 let testObject = function(object, searchTerm) {
-  return some(values(obj), s => s === searchTerm);
+  return some(values(object), s => s === searchTerm);
 };
 console.log(
-`testObject(5): ${ testObject(5) }
-testObject('5'): ${ testObject('5') }
-testObject(true): ${ testObject(true) }
-testObject(lodash): ${ testObject('lodash') }
+`testObject(5): ${ testObject(obj, 5) }
+testObject('5'): ${ testObject(obj, '5') }
+testObject(true): ${ testObject(obj, true) }
+testObject(lodash): ${ testObject(obj, 'lodash') }
 `);
 
 
 let curriedTestObject = function(object) {
   return function(searchTerm) {
-    return some(values(obj), s => s === searchTerm);
+    return some(values(object), s => s === searchTerm);
   };
 };
 

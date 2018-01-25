@@ -1,5 +1,3 @@
-const $deepClone = require('jquery-extend');
-const _deepClone = require('lodash/cloneDeep');
 const jsonClone = function(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
@@ -15,9 +13,7 @@ const testTimeCosts = function(functionName) {
   }
 }
 
-console.log('Start testing...')
-
-let obj = (function() {
+let obj = function() {
   let obj = {};
   for (let i = 0; i < 2000; i++) {
     obj[i] = {};
@@ -26,19 +22,11 @@ let obj = (function() {
     }
   }
   return obj;
-})();
+}();
 
-let resultJquery = testTimeCosts($deepClone)([true, {}, obj]);
-let resultLodash = testTimeCosts(_deepClone)([obj]);
 let resultJson = testTimeCosts(jsonClone)([obj]);
 
 console.log(
 `timeCosts:
-  $deepClone: ${ resultJquery.timeCosts }
-  _deepClone: ${ resultLodash.timeCosts }
   jsonClone: ${ resultJson.timeCosts }
 `);
-
-// console.log(resultJquery.result);
-// console.log(resultLodash.result);
-// console.log(resultJson.result);

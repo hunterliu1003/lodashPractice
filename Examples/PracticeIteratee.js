@@ -5,8 +5,8 @@ let jane = { name: 'jane', age: 36, gender: 'female' };
 let mary = { name: 'mary', age: 18, gender: 'female' };
 
 let getAge = iteratee('age');
-let is18 = iteratee({age: 18});
-let is18Female = iteratee({gender: 'female', age: 18})
+let is18 = iteratee({ age: 18 });
+let is18Female = iteratee({ gender: 'female', age: 18 })
 
 console.log(
 `getAge:

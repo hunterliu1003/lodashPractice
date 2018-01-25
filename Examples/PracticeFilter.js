@@ -16,8 +16,11 @@ let is18Female = {
 }
 
 let filter18femaleIteratee = people.filter(iteratee(is18Female));
+
+
 let _filter18female = filter(people, iteratee(is18Female));
 // let _filter18female = filter(people, is18Female);
+
 let fpFilter18female = fpFilter(is18Female);
 
 console.log(

@@ -8,6 +8,7 @@ let obj = {
 let testObj = function(searchTerm) {
   return some(values(obj), s => s === searchTerm);
 }
+// values(obj) = [5, false, 'lodash']
 console.log(
 `testObj(5): ${ testObj(5) }
 testObj('5'): ${ testObj('5') }
