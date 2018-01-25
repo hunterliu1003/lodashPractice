@@ -22,20 +22,20 @@ testObject(lodash): ${ testObject(obj, 'lodash') }
 `);
 
 
-let curriedTestObject = function(object) {
-  return function(searchTerm) {
-    return some(values(object), s => s === searchTerm);
-  };
-};
+// let curriedTestObject = function(object) {
+//   return function(searchTerm) {
+//     return some(values(object), s => s === searchTerm);
+//   };
+// };
 
-// let curriedTestObject = curry(function(object, searchTerm) {
-//   return some(values(obj), s => s === searchTerm);
-// });
+let curriedTestObject = curry(function(object, searchTerm) {
+  return some(values(object), s => s === searchTerm);
+});
 
-// console.log(
-// `curriedTestObject(obj)(5)): ${ curriedTestObject(obj)(5) }
-// curriedTestObject(obj, 5): ${ curriedTestObject(obj, 5) }
-// `);
+console.log(
+`curriedTestObject(obj)(5)): ${ curriedTestObject(obj)(5) }
+curriedTestObject(obj, 5): ${ curriedTestObject(obj, 5) }
+`);
 
 let testObj = curriedTestObject(obj);
 console.log(

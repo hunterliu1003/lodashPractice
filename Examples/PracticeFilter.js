@@ -18,7 +18,7 @@ let is18Female = {
 let filter18femaleIteratee = people.filter(iteratee(is18Female));
 
 
-let _filter18female = filter(people, iteratee(is18Female));
+let _filter18female = filter(people, is18Female);
 // let _filter18female = filter(people, is18Female);
 
 let fpFilter18female = fpFilter(is18Female);
@@ -32,7 +32,7 @@ ${ JSON.stringify(filter18femaleIteratee) }
 _filter18female:
 ${ JSON.stringify(_filter18female) }
 fpFilter18female(auto-currying):
-${ JSON.stringify(fpFilter18female(people)) }
+${ JSON.stringify(fpFilter(is18Female)(people)) }
 `);
 
 
