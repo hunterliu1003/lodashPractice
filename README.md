@@ -1,5 +1,9 @@
 # lodashPractice
 
+## 投影片
+
+[lodash](https://drive.google.com/file/d/1-4S5XVMw0eethqVqN75wKbTYEoZJv0Dj/view?usp=sharing)
+
 ## lodash-cli
 
 ```bash
